@@ -26,7 +26,8 @@ const seedDB=async()=>{
         const price=Math.floor(Math.random()*20)+10;
         const camp=new Campground({
             // Your User ID
-            author: '6275417923309fe345c0553f',
+            // author: '6275417923309fe345c0553f',
+            author: '6294ddfc2f7b44e2b135c99a',
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
             description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati libero nihil saepe aspernatur. Nostrum neque minima quibusdam modi in architecto expedita adipisci, quidem voluptatum. Eveniet nesciunt architecto consectetur id ut.',
