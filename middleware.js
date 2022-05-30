@@ -2,7 +2,7 @@ const {campgroundSchema, reviewSchema } = require('./schemas.js');
 const ExpressError=require('./utils/ExpressError')
 const Campground=require('./models/campground');
 const Review=require('./models/review');
-const adminId="6294ac63c5f504772db77eda"
+const adminId="6294d5d7766da1c2de52237f"
 
 module.exports.isLoggedIn = (req,res,next)=>{
     if(!req.isAuthenticated()){
