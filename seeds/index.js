@@ -49,7 +49,7 @@ const seedDB=async()=>{
              },
             images: [
                 {
-                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1651992940/YelpCamp/tishnli96jonloka8omo.jpg',
+                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1653539939/YelpCamp/zsid538rez7ucmlct2um.jpg',
                   filename: 'YelpCamp/tishnli96jonloka8omo',
                 },
                 {
