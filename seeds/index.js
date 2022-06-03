@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const mongoose=require('mongoose');
 const cities=require('./cities');
-const {places,descriptors}=require('./seedHelpers');
+const {places,descriptors,description}=require('./seedHelpers');
 const Restaurant=require('../models/restaurant');
 
 const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/Retro'
@@ -38,7 +38,7 @@ const seedDB=async()=>{
             author: '6294d5d7766da1c2de52237f',
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati libero nihil saepe aspernatur. Nostrum neque minima quibusdam modi in architecto expedita adipisci, quidem voluptatum. Eveniet nesciunt architecto consectetur id ut.',
+            description:`${sample(description)}`,
             price,
             geometry:{ 
                 type : "Point",
@@ -49,10 +49,22 @@ const seedDB=async()=>{
              },
             images: [
                 {
-                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654253390/Retro/al5uauivpecqcgrdo4zg.jpg',
+                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255882/Retro/vpfdqbkncmw0l9l2hu5y.jpg',
                 },
                 {
-                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654253239/Retro/jrphwe8z2k9hfo5lclov.jpg',
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255894/Retro/htvwwcbylbnlgklv1nw7.jpg',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255906/Retro/qapbdmcvtbizimmfa1ya.jpg',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654241947/Retro/alri3vcoi7jbrxgpzmdy.jpg',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255901/Retro/yjqkc5mg0nfstxthfl25.jpg',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654253390/Retro/al5uauivpecqcgrdo4zg.jpg',
                 }
               ]
         })
