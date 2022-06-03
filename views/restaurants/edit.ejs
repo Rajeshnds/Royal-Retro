@@ -1,9 +1,9 @@
 <% layout('/layouts/boilerplate')%>
 <div class="row">
-  <h1 class="text-center">New Campground</h1>
+  <h1 class="text-center">Edit Restaurant</h1>
   <div class="col-md-6 offset-md-3">
     <form
-      action="/campgrounds"
+      action="/restaurants/<%=restaurant._id%>?_method=PUT"
       method="POST"
       novalidate
       class="validated-form"
@@ -15,7 +15,8 @@
           class="form-control"
           type="text"
           id="title"
-          name="campground[title]"
+          name="restaurant[title]"
+          value="<%=restaurant.title%>"
           required
         />
         <div class="valid-feedback">Looks good!</div>
@@ -26,26 +27,15 @@
           class="form-control"
           type="text"
           id="location"
-          name="campground[location]"
+          name="restaurant[location]"
+          value="<%=restaurant.location%>"
           required
         />
         <div class="valid-feedback">Looks good!</div>
       </div>
 
-      <!-- <div class="mb-3">
-        <label class="form-label" for="image">Image url</label>
-        <input
-          class="form-control"
-          type="text"
-          id="image"
-          name="campground[image]"
-          required
-        />
-        <div class="valid-feedback">Looks good!</div>
-      </div> -->
-
       <div class="mb-3">
-        <label class="form-label" for="price">Campground Price</label>
+        <label class="form-label" for="price">Restaurant Price</label>
         <div class="input-group">
           <span class="input-group-text" id="price-label">$</span>
           <input
@@ -55,7 +45,8 @@
             placeholder="0.0"
             aria-label="price"
             aria-describedby="price-label"
-            name="campground[price]"
+            name="restaurant[price]"
+            value="<%=restaurant.price%>"
             required
           />
           <div class="valid-feedback">Looks good!</div>
@@ -68,14 +59,16 @@
           class="form-control"
           type="text"
           id="description"
-          name="campground[description]"
+          name="restaurant[description]"
           required
-        ></textarea>
+        >
+        <%=restaurant.description%>
+        </textarea>
         <div class="valid-feedback">Looks good!</div>
       </div>
       <!-- choose file -->
       <div class="mb-3">
-        <label for="image" class="form-label">Upload Image,s</label>
+        <label for="image" class="form-label">Add More Image,s</label>
         <input
           class="form-control"
           type="file"
@@ -86,9 +79,23 @@
       </div>
       <!-- choose file -->
       <div class="mb-3">
-        <button class="btn btn-success">Add Campground</button>
+        <% restaurant.images.forEach(function(img,i){ %>
+        <img src="<%=img.thumbnail%>" class="img-thumbnail" alt="" />
+        <div class="form-check-inline">
+          <input
+            type="checkbox"
+            id="image-<%=i%>"
+            name="deleteImages[]"
+            value="<%=img.filename%>"
+          />
+        </div>
+        <label for="image-<%=i%>">Delete?</label>
+        <% }) %>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-info">Update Restaurant</button>
       </div>
     </form>
-    <a href="/campgrounds">All Campgrounds</a>
+    <a href="/restaurants/<%=restaurant._id%>">Back to Restaurant</a>
   </div>
 </div>

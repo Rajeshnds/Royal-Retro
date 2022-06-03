@@ -5,11 +5,11 @@ if (process.env.NODE_ENV !== 'production') {
 const mongoose=require('mongoose');
 const cities=require('./cities');
 const {places,descriptors}=require('./seedHelpers');
-const Campground=require('../models/campground');
+const Restaurant=require('../models/restaurant');
 
-const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'
+const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/Retro'
 // const dbUrl=process.env.DB_URL
-// const dbUrl = 'mongodb://localhost:27017/yelp-camp';
+// const dbUrl = 'mongodb://localhost:27017/retro';
 
 mongoose.connect(dbUrl,{
     useNewUrlParser:true,
@@ -28,11 +28,11 @@ const sample=(array)=>array[Math.floor(Math.random()*array.length)];
 
 
 const seedDB=async()=>{
-    await Campground.deleteMany({});
+    await Restaurant.deleteMany({});
     for(let i=0;i<300;i++){
         const random1000=Math.floor(Math.random()*400);
         const price=Math.floor(Math.random()*20)+10;
-        const camp=new Campground({
+        const retro=new Restaurant({
             // Your User ID
             // author: '6275417923309fe345c0553f',
             author: '6294d5d7766da1c2de52237f',
@@ -49,16 +49,14 @@ const seedDB=async()=>{
              },
             images: [
                 {
-                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1653539939/YelpCamp/zsid538rez7ucmlct2um.jpg',
-                  filename: 'YelpCamp/tishnli96jonloka8omo',
+                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654253390/Retro/al5uauivpecqcgrdo4zg.jpg',
                 },
                 {
-                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1651992945/YelpCamp/c6eupt59sgdexo03y6a9.jpg',
-                  filename: 'YelpCamp/c6eupt59sgdexo03y6a9',
+                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654253239/Retro/jrphwe8z2k9hfo5lclov.jpg',
                 }
               ]
         })
-        await camp.save();
+        await retro.save();
     }
 }
 

@@ -16,15 +16,15 @@ const User = require('./models/user');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
-const campgroundRoutes = require('./routes/campgrounds');
+const restaurantRoutes = require('./routes/restaurants');
 const reviewRoutes = require('./routes/reviews');
 const { join } = require('path');
 
 const MongoDBStore = require('connect-mongo');
 
-const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'
-// const dbUrl = 'mongodb://localhost:27017/yelp-camp';
-// 'mongodb://localhost:27017/yelp-camp'
+const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/retro'
+// const dbUrl = 'mongodb://localhost:27017/retro';
+// 'mongodb://localhost:27017/retro'
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -120,6 +120,12 @@ const fontSrcUrls = [
     "https://cdn.jsdelivr.net",
 ];
 
+const imgSrcUrls=[
+    "https://res.cloudinary.com/dragonmas-cloud/",
+    "https://images.unsplash.com/",
+    "https://static.vecteezy.com/",
+]
+
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
@@ -133,9 +139,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/dragonmas-cloud/",
-                "https://images.unsplash.com/",
-                "https://media.istockphoto.com",
+                ...imgSrcUrls
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
         },
@@ -159,8 +163,8 @@ app.use((req, res, next) => {
 })
 
 app.use('/', userRoutes);
-app.use('/campgrounds', campgroundRoutes);
-app.use('/campgrounds/:id/reviews', reviewRoutes);
+app.use('/restaurants', restaurantRoutes);
+app.use('/restaurants/:id/reviews', reviewRoutes);
 
 app.get('/', (req, res) => {
     res.render('home')
