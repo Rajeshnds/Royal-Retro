@@ -28,7 +28,7 @@ const sample=(array)=>array[Math.floor(Math.random()*array.length)];
 
 
 const seedDB=async()=>{
-    await Restaurant.deleteMany({});
+    // await Restaurant.deleteMany({});
     for(let i=0;i<300;i++){
         const random1000=Math.floor(Math.random()*400);
         const price=Math.floor(Math.random()*20)+10;
