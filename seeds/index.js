@@ -7,7 +7,7 @@ const cities=require('./cities');
 const {places,descriptors,description}=require('./seedHelpers');
 const Restaurant=require('../models/restaurant');
 
-const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/Retro'
+const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/retro'
 // const dbUrl=process.env.DB_URL
 // const dbUrl = 'mongodb://localhost:27017/retro';
 
@@ -28,13 +28,13 @@ const sample=(array)=>array[Math.floor(Math.random()*array.length)];
 
 
 const seedDB=async()=>{
-    // await Restaurant.deleteMany({});
+    await Restaurant.deleteMany({});
     for(let i=0;i<300;i++){
         const random1000=Math.floor(Math.random()*400);
         const price=Math.floor(Math.random()*20)+10;
         const retro=new Restaurant({
             // Your User ID
-            // author: '6275417923309fe345c0553f',
+            // author: '6299b8cc773a8b0d7d1487a0',
             author: '6294d5d7766da1c2de52237f',
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
@@ -49,22 +49,28 @@ const seedDB=async()=>{
              },
             images: [
                 {
-                  url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255882/Retro/vpfdqbkncmw0l9l2hu5y.jpg',
-                },
-                {
-                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255894/Retro/htvwwcbylbnlgklv1nw7.jpg',
-                },
-                {
-                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255906/Retro/qapbdmcvtbizimmfa1ya.jpg',
-                },
-                {
-                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654241947/Retro/alri3vcoi7jbrxgpzmdy.jpg',
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255882/Retro/vpfdqbkncmw0l9l2hu5y.jpg',
+                    filename: 'Retro/vpfdqbkncmw0l9l2hu5y',
                 },
                 {
                     url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255901/Retro/yjqkc5mg0nfstxthfl25.jpg',
+                    filename: 'Retro/yjqkc5mg0nfstxthfl25',
                 },
                 {
                     url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654253390/Retro/al5uauivpecqcgrdo4zg.jpg',
+                    filename: 'Retro/al5uauivpecqcgrdo4zg',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255894/Retro/htvwwcbylbnlgklv1nw7.jpg',
+                    filename: 'Retro/htvwwcbylbnlgklv1nw7',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255906/Retro/qapbdmcvtbizimmfa1ya.jpg',
+                    filename: 'Retro/qapbdmcvtbizimmfa1ya',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654253239/Retro/jrphwe8z2k9hfo5lclov.jpg',
+                    filename: 'Retro/jrphwe8z2k9hfo5lclov',
                 }
               ]
         })
