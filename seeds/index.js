@@ -49,28 +49,28 @@ const seedDB=async()=>{
              },
             images: [
                 {
-                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255882/Retro/vpfdqbkncmw0l9l2hu5y.jpg',
-                    filename: 'Retro/vpfdqbkncmw0l9l2hu5y',
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654342621/Retro/omfmulnzmnpg10iqjdiq.jpg',
+                    filename: 'Retro/omfmulnzmnpg10iqjdiq',
                 },
                 {
-                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255901/Retro/yjqkc5mg0nfstxthfl25.jpg',
-                    filename: 'Retro/yjqkc5mg0nfstxthfl25',
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654342637/Retro/ixxp7igbjmvos17bpeju.jpg',
+                    filename: 'Retro/ixxp7igbjmvos17bpeju',
                 },
                 {
-                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654253390/Retro/al5uauivpecqcgrdo4zg.jpg',
-                    filename: 'Retro/al5uauivpecqcgrdo4zg',
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654342643/Retro/zohitf99graav9zg59vw.jpg',
+                    filename: 'Retro/zohitf99graav9zg59vw',
                 },
                 {
-                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255894/Retro/htvwwcbylbnlgklv1nw7.jpg',
-                    filename: 'Retro/htvwwcbylbnlgklv1nw7',
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654342485/Retro/y3mucuwnpt5z8pc9xekl.jpg',
+                    filename: 'Retro/y3mucuwnpt5z8pc9xekl',
                 },
                 {
-                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654255906/Retro/qapbdmcvtbizimmfa1ya.jpg',
-                    filename: 'Retro/qapbdmcvtbizimmfa1ya',
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654336871/Retro/pibnk7gkgx8ebii1xyol.jpg',
+                    filename: 'Retro/pibnk7gkgx8ebii1xyol',
                 },
                 {
-                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654253239/Retro/jrphwe8z2k9hfo5lclov.jpg',
-                    filename: 'Retro/jrphwe8z2k9hfo5lclov',
+                    url: 'https://res.cloudinary.com/dragonmas-cloud/image/upload/v1654336936/Retro/ojaskazhddlreoi0ufqv.jpg',
+                    filename: 'Retro/ojaskazhddlreoi0ufqv',
                 }
               ]
         })
